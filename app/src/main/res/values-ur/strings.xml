@@ -1,0 +1,12 @@
+<resources>
+    <string name="hello_blank_fragment">ہیلو خالی ٹکڑا</string>
+    <string name="home">گھر</string>
+    <string name="message">پیغام</string>
+    <string name="rate_us">ہمیں درجہ دیں</string>
+    <string name="share">بانٹیں</string>
+    <string name="contact_us">ہم سے رابطہ کریں</string>
+    <string name="home_fragment">گھر</string>
+    <string name="message_fragment">پیغام</string>
+    <string name="rate_fragment">ہمیں درجہ دیں</string>
+    <string name="language">لینگویج</string>
+</resources>

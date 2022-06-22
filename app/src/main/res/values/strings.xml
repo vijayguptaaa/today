@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">RegitrationLoginRoom</string>
+    <string name="already_have_an_account"><u>Already have an Account</u></string>
+    <string name="create_new_account"><u>Create New Account</u></string>
+    <string name="mydatabase">MyDatabase</string>
+    <string name="back_arrow">Back Arrow</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home">Home</string>
+    <string name="message">Message</string>
+    <string name="rate_us">Rate us</string>
+    <string name="share">share</string>
+    <string name="contact_us">contact us</string>
+    <string name="language">language</string>
+    <string name="eng">English</string>
+    <string name="action_spinner">Language</string>
+    <string name="home_fragment">Home</string>
+    <string name="message_fragment">Message</string>
+    <string name="rate_fragment">Rate</string>
+    <string name="login_signup">LogIn</string>
+    <string name="email_signup">Email</string>
+    <string name="password_login">Password</string>
+    <string name="title_activity_bottom_navigation2">BottomNavigation2</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="logout">Logout</string>
+    <string name="hindi">hindi</string>
+    <string name="english">english</string>
+    <string name="urdu">urdu</string>
+
+
+</resources>

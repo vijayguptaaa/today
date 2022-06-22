@@ -1,0 +1,12 @@
+<resources>
+    <string name="hello_blank_fragment">हेलो ब्लेंक फ्रेगमेंट</string>
+    <string name="home">होम</string>
+    <string name="message">मैसेज</string>
+    <string name="rate_us">रेट अस</string>
+    <string name="share">शेयर</string>
+    <string name="contact_us">कांटेक्ट अस</string>
+    <string name="home_fragment">होम</string>
+    <string name="message_fragment">मैसेज</string>
+    <string name="rate_fragment">रेट अस</string>
+    <string name="language">लैंग्वेज </string>
+</resources>

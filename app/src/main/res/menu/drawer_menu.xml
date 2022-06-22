@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools = "http://schemas.android.com/tools"
+    tools:showIn = "navigation_view"
+    >
+
+<group android:checkableBehavior="single">
+    <item android:title="@string/home"
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_baseline_home_24"
+        />
+    <item android:title="@string/language"
+        android:id="@+id/language"
+        android:icon="@drawable/ic_baseline_language_24"
+        />
+<!--    <item android:id="@+id/hi"-->
+<!--        android:title="@string/hindi"-->
+<!--        android:visible="false"-->
+<!--        />-->
+<!--    <item android:id="@+id/en"-->
+<!--        android:title="@string/english"-->
+<!--        android:visible="false"-->
+<!--        />-->
+
+<!--    <item android:id="@+id/ur"-->
+<!--        android:title="@string/urdu"-->
+<!--        android:visible="false"-->
+<!--        />-->
+
+    <item android:title="@string/rate_us"
+        android:id="@+id/rateUs"
+        android:icon="@drawable/ic_baseline_rate_review_24"
+        />
+
+</group>
+
+    <item android:title="communicate">
+        <menu>
+            <group android:checkableBehavior="single">
+            <item
+                android:icon="@drawable/ic_baseline_share_24"
+                android:title="@string/share"
+                android:id="@+id/nav_share"
+                />
+
+            <item
+                android:icon="@drawable/ic_baseline_contact_support_24"
+                android:title="@string/contact_us"
+                android:id="@+id/contact"
+                />
+            </group>
+        </menu>
+
+    </item>
+    <group android:checkableBehavior="single">
+        <item android:title="@string/logout"
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_baseline_backspace_24"
+            />
+    </group>
+
+
+</menu>
