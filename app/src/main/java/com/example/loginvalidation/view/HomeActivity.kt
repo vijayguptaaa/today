@@ -1,7 +1,5 @@
 package com.example.loginvalidation.view
-
 import android.content.ContentValues.TAG
-import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -13,7 +11,6 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import com.example.loginvalidation.databinding.ActivityHomeBinding
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -23,7 +20,6 @@ import com.example.loginvalidation.R
 import com.example.loginvalidation.RetrofitService
 import com.example.loginvalidation.repository.MainRepository
 import com.example.loginvalidation.roomdb.PersonDatabase
-
 import com.example.loginvalidation.view.fragments.HomeFragment
 import com.example.loginvalidation.view.fragments.LanguageFragment
 import com.example.loginvalidation.view.fragments.LogoutFragment
@@ -31,7 +27,9 @@ import com.example.loginvalidation.view.fragments.RateFragment
 import com.example.loginvalidation.viewModelFactories.HomeViewModelFactory
 import com.example.loginvalidation.viewmodel.HomeActivityViewModel
 import com.google.android.material.navigation.NavigationView
+import de.hdodenhof.circleimageview.CircleImageView
 import kotlinx.android.synthetic.main.activity_bottom_navigation.*
+
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var mBinding: ActivityHomeBinding
@@ -54,12 +52,14 @@ class HomeActivity : AppCompatActivity() {
         val view : NavigationView = findViewById(R.id.nav_View)
         val headerView : View = view.getHeaderView(0)
 
+
         val navUserName = headerView.findViewById<View>(R.id.headerName) as TextView
         val navEmail = headerView.findViewById<View>(R.id.headerEmail) as TextView
-
+        val navImage = headerView.findViewById<View>(R.id.headerImage) as CircleImageView
         viewModel.getUserDetails().observe(this, Observer {
             if(it != null){
-                (it.firstName + it.lastName).also { navUserName.text = it }
+//                navImage.setImageBitmap(stringToBitmap(it.image))
+                (it.firstName +  it.lastName).also { navUserName.text = it }
                 (it.email).also { navEmail.text = it }
             }
         })

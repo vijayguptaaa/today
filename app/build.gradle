@@ -90,7 +90,4 @@ dependencies {
 
 //Picasso is open source and one of the widely used image download libraries in Android
     implementation 'com.squareup.picasso:picasso:2.71828'
-
-    //Fotoapparat //used for cameraview
-    implementation 'io.fotoapparat:fotoapparat:2.6.1'
 }

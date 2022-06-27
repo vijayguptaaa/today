@@ -1,13 +1,19 @@
 package com.example.loginvalidation.viewmodel
 
+import android.annotation.SuppressLint
+import android.graphics.Bitmap
 import android.text.TextUtils
+import android.widget.ImageView
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.loginvalidation.databinding.ActivitySignupBinding
 import com.example.loginvalidation.models.UserErrorModel
 import com.example.loginvalidation.roomdb.User
 import com.example.loginvalidation.roomdb.PersonRepository
 import com.example.loginvalidation.utils.Validation
+import com.example.loginvalidation.view.SignupActivity
+import kotlinx.android.synthetic.main.activity_signup.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -19,33 +25,22 @@ class SignUpViewModel(private val repository: PersonRepository) : ViewModel()  {
     var email : MutableLiveData<String> = MutableLiveData()
     var phone : MutableLiveData<String> = MutableLiveData()
     var password : MutableLiveData<String> = MutableLiveData()
+    var image : MutableLiveData<String> = MutableLiveData()
     var confirmPassword : MutableLiveData<String> = MutableLiveData()
     var userError : MutableLiveData<UserErrorModel> = MutableLiveData()
     private lateinit var user : User
-
+    val onClickImageResponse : MutableLiveData<Boolean> = MutableLiveData()
     val onSignUpResponse : MutableLiveData<Boolean> = MutableLiveData()
     val onLoginResponse : MutableLiveData<Boolean> = MutableLiveData()
-
 
     init {
         onSignUpResponse.value = false
         onLoginResponse.value = false
         userError.value = UserErrorModel()
     }
-//    private var dao = PersonDatabase.getInstance(application).personDao()
-//    private var personRepository = PersonRepository(dao)
-//    private val mContext = application
-
-//    var showError : MutableLiveData<String> = MutableLiveData()
-//    var firstName: ObservableField<String> = ObservableField("")
-//    var lastName: ObservableField<String> = ObservableField("")
-//    var email: ObservableField<String> = ObservableField("")
-//    var password: ObservableField<String> = ObservableField("")
-
-    /*var fullName : ObservableField<String>? = null
-    var email : ObservableField<String>? = null
-    var password : ObservableField<String>? = null*/
-
+    fun onClickImage(){
+        onClickImageResponse.value = true
+    }
     // Format validation of First Name
     private fun validate() : Boolean {
         val userErrorMessage = UserErrorModel()
@@ -83,18 +78,29 @@ class SignUpViewModel(private val repository: PersonRepository) : ViewModel()  {
             insertUser()
             onSignUpResponse.value = true
         }
+        onSignUpResponse.value = validate()
     }
     fun loginButton(){
         onLoginResponse.value = true
     }
     // Save Data into Database
-    private fun insertUser() {
+     fun insertUser() {
         CoroutineScope(Dispatchers.IO).launch {
-            user = User(0,firstName.value.toString().trim(),lastName.value.toString().trim()
+            user = User(0,image.value.toString(),firstName.value.toString().trim(),lastName.value.toString().trim()
                 ,email.value.toString().trim(),password.value.toString().trim())
             repository.insert(user)
+            repository.insert(this@SignUpViewModel.user)
 
         }
     }
-}
 
+
+//fun insertUser(user: User){
+//    CoroutineScope(Dispatchers.IO).launch {
+//        repository.insert(user)
+//    }
+//}
+//    fun setImage(imageToString : String){
+//        image.value = imageToString
+//    }
+}
